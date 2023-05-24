@@ -37,8 +37,8 @@ export default function Home() {
               </div>
             ))}
         </div>
+        <div>Git connected successfully 🎉🎉🎉</div>
       </main>
-      <div>Git connected successfully 🎉🎉🎉</div>
     </>
   );
 }
