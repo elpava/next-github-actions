@@ -37,7 +37,10 @@ export default function Home() {
               </div>
             ))}
         </div>
-        <div>Git connected successfully 🎉🎉🎉</div>
+        <div>
+          Git connected successfully
+          <br /> and worked very well 🎉🎉🎉
+        </div>
       </main>
     </>
   );
