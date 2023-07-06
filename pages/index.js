@@ -1,19 +1,22 @@
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import Main from "@/components/main";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
 export default function Home() {
-  const [data, setData] = React.useState(null);
+  // const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
-    const externalSourceUrl = "https://jsonplaceholder.typicode.com/todos/1";
-    const nextApiUrl = "http://localhost:3100/api/hello";
-    const coreApiUrl = "http://mzee.ir:82/api/WeatherForecast";
-    fetch(coreApiUrl).then(async (res) => {
-      const data = await res.json();
-      setData(data);
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   const externalSourceUrl = "https://jsonplaceholder.typicode.com/todos/1";
+  //   const nextApiUrl = "http://localhost:3100/api/hello";
+  //   const coreApiUrl = "http://mzee.ir:82/api/WeatherForecast";
+  //   fetch(coreApiUrl).then(async (res) => {
+  //     const data = await res.json();
+  //     setData(data);
+  //   });
+  // }, []);
 
   return (
     <>
@@ -23,24 +26,11 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='main'>
-        <h1>Nextjs: Home Page</h1>
-        <Link href='/about'>Go to About us</Link>
-        <div className='container'>
-          {data &&
-            data.map(({ date, summary, temperatureC, temperatureF }, idx) => (
-              <div key={idx} style={{ display: "flex", gap: "1rem" }}>
-                <span>{date}</span>
-                <span>{summary}</span>
-                <span>{temperatureC}</span>
-                <span>{temperatureF}</span>
-              </div>
-            ))}
-        </div>
-        <div>
-          Git connected successfully
-          <br /> and worked very well 🎉🎉🎉🎉
-        </div>
+
+      <main className='horizontal-flow-content'>
+        <Header />
+        <Main />
+        <Footer />
       </main>
     </>
   );
